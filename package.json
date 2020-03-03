@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js",
+    "upload": "node ./src/utils/upload-to-s3.js",
     "cnames": "node ./src/utils/once/compile-countries-map.js"
   },
   "repository": {
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/hanyulo/coronavirus-data-hub#readme",
   "dependencies": {
+    "aws-sdk": "^2.631.0",
     "csvtojson": "^2.0.10",
     "lodash": "^4.17.15",
     "node-xlsx": "^0.15.0",
