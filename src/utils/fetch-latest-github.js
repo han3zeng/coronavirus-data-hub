@@ -1,7 +1,7 @@
 const rp = require('request-promise');
 const _get = require('lodash/get');
 const fs = require('fs');
-
+const logger = require('./create-logger');
 
 const _ = {
   get: _get
@@ -85,7 +85,6 @@ const compileData = (rawData) => {
       }
     }
   });
-  console.log(res);
 };
 
 const main = async () => {
@@ -99,7 +98,10 @@ const main = async () => {
     });
     compileData(data);
   } catch (e) {
-    console.log('e: ', e);
+    logger.log({
+      level: 'error',
+      message: `fail to fetch latest info from JH github ${e}`
+    });
   }
 };
 

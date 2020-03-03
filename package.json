@@ -31,7 +31,8 @@
     "lodash": "^4.17.15",
     "node-xlsx": "^0.15.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^6.4.0",

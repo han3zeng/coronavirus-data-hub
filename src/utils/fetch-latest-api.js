@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const _get = require('lodash/get');
 const { johnsHopkinsAPI } = require('../config');
+const logger = require('./create-logger');
 
 const _ = {
   get: _get
@@ -76,10 +77,22 @@ const fetch = () => {
 
       fs.writeFile(`${targetDirectory}/${fileName}.${fileExtension}`, JSON.stringify(result, null, 2), (err) => {
         if (err) {
-          console.log(`fail to write file: ${fileName}: ${err}`);
+          logger.log({
+            level: 'error',
+            message: `fail to write file: ${fileName}: ${err}`
+          });
         } else {
-          console.log(`write file ${fileName} successfully`);
+          logger.log({
+            level: 'info',
+            message: `write file ${fileName} successfully`
+          });
         }
+      });
+    })
+    .catch((e) => {
+      logger.log({
+        level: 'error',
+        message: `fail to fetch latest info from JH's API ${e}`
       });
     });
 };

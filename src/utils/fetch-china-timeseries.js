@@ -3,6 +3,7 @@ const _get = require('lodash/get');
 const csvtojson = require('csvtojson');
 const path = require('path');
 const fs = require('fs');
+const logger = require('./create-logger');
 
 const _ = {
   get: _get
@@ -119,18 +120,41 @@ function main () {
           headerRow = header;
         })
         .then((dataRows) => {
-          const timeSeriesMap = johnHopkinsTimeSeries([headerRow, ...dataRows]);
+          let timeSeriesMap = {};
+          try {
+            timeSeriesMap = johnHopkinsTimeSeries([headerRow, ...dataRows]);
+          } catch (e) {
+            logger.log({
+              level: 'error',
+              message: 'fail to comiple rows in johnHopkinsTimeSeries function'
+            });
+          }
           fs.writeFile(`${targetDirectory}/${fileName}.${fileExtension}`, JSON.stringify(timeSeriesMap, null, 2), (err) => {
             if (err) {
-              console.log(`fail to write file: ${fileName}: ${err}`);
+              logger.log({
+                level: 'error',
+                message: `fail to write file: ${fileName}: ${err}`
+              });
             } else {
-              console.log(`write file ${fileName} successfully`);
+              logger.log({
+                level: 'info',
+                message: `write file ${fileName} successfully`
+              });
             }
+          });
+        })
+        .catch(() => {
+          logger.log({
+            level: 'error',
+            message: 'fail to transform csv to json from fetch-china-timeseries'
           });
         });
     })
     .catch((e) => {
-      console.log(`can not fetch data from covid-19 github %${e}`);
+      logger.log({
+        level: 'error',
+        message: `can not fetch data from covid-19 github %${e}`
+      });
     });
 }
 
