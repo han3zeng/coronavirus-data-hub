@@ -3,10 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const BUCKET_NAME = 'tpts-public';
 const logger = require('./create-logger');
+require('dotenv').config();
 
 const s3 = new AWS.S3({
-  accessKeyId: '',
-  secretAccessKey: ''
+  accessKeyId: process.env.AWS_API_KEY,
+  secretAccessKey: process.env.AWS_SECRET
 });
 
 const targets = [

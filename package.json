@@ -30,6 +30,7 @@
   "dependencies": {
     "aws-sdk": "^2.631.0",
     "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
     "lodash": "^4.17.15",
     "node-xlsx": "^0.15.0",
     "request": "^2.88.2",
