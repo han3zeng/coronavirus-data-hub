@@ -20,8 +20,9 @@ fetch data from repo Johns Hopkins
         2. history.json
 
 ## TODO
-1. CI/CD
-2. Encrypt/Decrypt secret Key
+* [ ] CI/CD
+* [ ] Encrypt/Decrypt secret Key
+* [ ] node/npm path in crontab
 
 ## Data Soruce
 * [COVID-19 Johns Hopkins](https://github.com/CSSEGISandData/COVID-19)
