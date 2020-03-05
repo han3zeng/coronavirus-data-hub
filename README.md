@@ -19,6 +19,23 @@ fetch data from repo Johns Hopkins
         1. error.json
         2. history.json
 
+
+## CI/CD Note
+
+* prerequisite
+    1. aws instance
+    2. gtihub repo
+
+* steps
+    1. install AWS CLI on local machine (my mac book pro)
+    2. install CodeDeploy agent on ec2 instance
+        * [ref](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html)
+    3. create service role
+        * https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html
+
+* refs
+    * https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-github-create-application.html
+
 ## TODO
 * [ ] CI/CD
 * [ ] Encrypt/Decrypt secret Key
