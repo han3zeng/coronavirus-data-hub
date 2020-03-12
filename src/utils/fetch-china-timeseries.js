@@ -13,7 +13,7 @@ const fileName = 'china-coronavirus-timeseries';
 const targetDirectory = path.resolve(process.cwd(), './dist');
 const fileExtension = 'json';
 
-const countrySet = new Set(['Mainland China', 'Hong Kong', 'Macau']);
+const countrySet = new Set(['Mainland China', 'Hong Kong', 'Macau', 'China']);
 const keyTimestampMap = {};
 const timeSeriesMap = {};
 const milliSecondsInADay = 24 * 60 * 60 * 1000;
