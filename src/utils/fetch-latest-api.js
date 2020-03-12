@@ -50,12 +50,12 @@ const fetch = () => {
       const resCountries = features.map((feature, index) => {
         const { Country_Region: name, Confirmed: confirmed, Recovered: recovered, Deaths: deaths } = feature.attributes;
 
-        if (name === 'Mainland China') {
+        if (name === 'Mainland China' || name === 'China') {
           result.confirmed.china = confirmed;
           result.deaths.china = deaths;
           result.recovered.china = recovered;
         }
-        if (name === 'Taiwan') {
+        if (name === 'Taiwan' || name === 'Taiwan*') {
           result.confirmed.taiwan = confirmed;
           result.deaths.taiwan = deaths;
           result.recovered.taiwan = recovered;

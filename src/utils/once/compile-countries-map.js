@@ -25,10 +25,18 @@ const countreisXLStoJSON = () => {
   });
   // exceptions
   res['mainland china'] = '中國';
+  res.china = '中國';
   res['hong kong'] = '香港';
-  res.taiwan = '台灣';
+  // res.taiwan = '台灣';
+  res['taiwan*'] = '台灣';
+  res['korea, south'] = '韓國';
   res.macau = '澳門';
-  res.others = '鑽石公主號';
+  res.others = '其他';
+  res['cruise ship'] = '鑽石公主號';
+  res['french guiana'] = '法屬圭亞那';
+  res.martinique = '馬丁尼克（法國海外大區）';
+  res.reunion = '留尼旺（法國海外大區';
+  res['congo (kinshasa)'] = '剛果';
   fs.writeFile(`${targetDirectory}/${fileName}.${fileExtension}`, JSON.stringify(res, null, 2), (err) => {
     if (err) {
       console.log(`fail to write file: ${fileName}: ${err}`);

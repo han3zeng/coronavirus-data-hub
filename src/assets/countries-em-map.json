@@ -382,8 +382,15 @@
   "venezuela": "委內瑞拉",
   "bolivarian republic of venezuela": "委內瑞拉",
   "mainland china": "中國",
+  "china": "中國",
   "hong kong": "香港",
-  "taiwan": "台灣",
+  "taiwan*": "台灣",
+  "korea, south": "韓國",
   "macau": "澳門",
-  "others": "鑽石公主號"
+  "others": "其他",
+  "cruise ship": "鑽石公主號",
+  "french guiana": "法屬圭亞那",
+  "martinique": "馬丁尼克（法國海外大區）",
+  "reunion": "留尼旺（法國海外大區",
+  "congo (kinshasa)": "剛果"
 }
