@@ -37,10 +37,14 @@ fetch data from repo Johns Hopkins
     * https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-github-create-application.html
 
 ## TODO
-* [ ] CI/CD
-* [ ] Encrypt/Decrypt secret Key
-* [ ] node/npm path in crontab
+* [ ] ~~CI/CD~~
+* [X] Encrypt/Decrypt secret Key
+* [X] node/npm path in crontab
 
 ## Data Soruce
 * [COVID-19 Johns Hopkins](https://github.com/CSSEGISandData/COVID-19)
 * [Countries Name Translation Table](https://www.mofa.gov.tw/News_Content_M_2.aspx?n=A30D6E978846B3C0&sms=BA727B25FD99C6CC&s=6B456DA895AB3809)
+
+## Public Data
+* [Time Series](https://tpts-public.s3-ap-southeast-1.amazonaws.com/china-coronavirus-timeseries.json)
+* [Latest](https://tpts-public.s3-ap-southeast-1.amazonaws.com/latest-coronavirus-stats.json)
