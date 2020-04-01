@@ -106,7 +106,7 @@ const johnHopkinsTimeSeries = (rows) => {
 
 
 function main () {
-  const url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv';
+  const url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv';
   let headerRow = [];
   rp(url)
     .then((rawData) => {
