@@ -63,6 +63,7 @@ const fetch = () => {
 
         return {
           name: countriesMap[name.toLowerCase().trim()] || name.toLowerCase().trim(),
+          ename: name.toLowerCase().trim(),
           confirmed,
           deaths,
           recovered
