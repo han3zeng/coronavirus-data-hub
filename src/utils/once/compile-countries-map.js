@@ -39,10 +39,10 @@ const countreisXLStoJSON = () => {
   res.mayotte = '法屬馬約特島';
   res['congo (kinshasa)'] = '民主剛果首都：金夏沙';
   res['congo (brazzaville)'] = '剛果首都：布拉薩';
-  res.guernsey = '根息島';
+  res.guernsey = '英屬根息島';
   res['the bahamas'] = '巴哈馬';
   res.greenland = '格陵蘭島';
-  res.jersey = '澤西島';
+  res.jersey = '英屬澤西島';
   res.aruba = '阿魯巴';
   res['puerto rico'] = '波多黎各';
   res.guam = '關島';
