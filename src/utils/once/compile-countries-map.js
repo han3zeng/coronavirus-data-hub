@@ -37,8 +37,8 @@ const countreisXLStoJSON = () => {
   res.martinique = '法屬馬丁尼克島';
   res.reunion = '法屬留尼旺島';
   res.mayotte = '法屬馬約特島';
-  res['congo (kinshasa)'] = '民主剛果首都：金夏沙';
-  res['congo (brazzaville)'] = '剛果首都：布拉薩';
+  res['congo (kinshasa)'] = '民主剛果';
+  res['congo (brazzaville)'] = '剛果';
   res.guernsey = '英屬根息島';
   res['the bahamas'] = '巴哈馬';
   res.greenland = '格陵蘭島';
@@ -52,6 +52,7 @@ const countreisXLStoJSON = () => {
   res['the holy see'] = '梵蒂岡（教廷）';
   res.uae = '阿拉伯聯合大公國';
   res['united arab emirates'] = '阿拉伯聯合大公國';
+  res.somaliland = '索馬利蘭';
   fs.writeFile(`${targetDirectory}/${fileName}.${fileExtension}`, JSON.stringify(res, null, 2), (err) => {
     if (err) {
       console.log(`fail to write file: ${fileName}: ${err}`);
