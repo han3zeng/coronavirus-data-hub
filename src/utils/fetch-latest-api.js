@@ -40,11 +40,14 @@ const fetch = () => {
     rp(johnsHopkinsAPI.countries),
     rp(johnsHopkinsAPI.totalConfirmed),
     rp(johnsHopkinsAPI.totalDeaths),
-    rp(johnsHopkinsAPI.totalRecovered)
+    rp(johnsHopkinsAPI.totalRecovered),
+    rp(johnsHopkinsAPI.provinces)
   ];
   Promise.all(promises)
     .then((values) => {
       const countriesData = values[0];
+      const provincesData = values[4];
+      let exceptions = [];
       const jsonObj = JSON.parse(countriesData);
       const { features } = jsonObj;
       const resCountries = features.map((feature, index) => {
@@ -70,7 +73,28 @@ const fetch = () => {
         };
       });
 
-      result.countries = resCountries;
+      try {
+        const greenlandObj = JSON.parse(provincesData).features.find(entity => entity.attributes.Province_State === 'Greenland')
+        exceptions = [
+          {
+            name: countriesMap.greenland,
+            ename: 'greenland',
+            confirmed: greenlandObj.attributes.Confirmed,
+            deaths: greenlandObj.attributes.Recovered,
+            recovered: greenlandObj.attributes.Deaths
+          }
+        ];
+      } catch (e) {
+        logger.log({
+          level: 'error',
+          message: 'fail to fetch greenland data'
+        });
+      }
+
+      result.countries = [
+        ...resCountries,
+        ...exceptions
+      ];
 
       result.confirmed.global = _.get(JSON.parse(values[1]), 'features[0].attributes.value', 0);
       result.deaths.global = _.get(JSON.parse(values[2]), 'features[0].attributes.value', 0);
